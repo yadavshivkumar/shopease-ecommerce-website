@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopEase — a responsive demo e-commerce storefront built with HTML, CSS and JavaScript.">
+  <title>ShopEase — Everyday finds, better prices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Free delivery on orders over ₹2,499 <span>•</span> Easy 7-day returns</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="ShopEase home"><span class="brand-mark">S</span><span>shop<span class="brand-accent">ease</span><small>EVERYDAY, MADE BETTER</small></span></a>
+    <form class="searchbar" id="searchForm" role="search">
+      <span aria-hidden="true">⌕</span>
+      <input id="searchInput" type="search" placeholder="Search products, brands and more..." aria-label="Search products">
+      <button type="submit">Search</button>
+    </form>
+    <div class="header-actions">
+      <button class="icon-button" id="accountButton" title="Account" aria-label="Account">♙<span>Account</span></button>
+      <button class="icon-button" id="wishlistHeaderButton" title="Wishlist" aria-label="Wishlist">♡<span>Wishlist</span><b id="wishlistCount" class="count-badge">0</b></button>
+      <button class="icon-button cart-trigger" id="cartButton" title="Shopping cart" aria-label="Shopping cart">▣<span>Cart</span><b id="cartCount" class="count-badge">0</b></button>
+      <button class="mobile-menu" id="mobileMenuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <nav class="category-nav" id="categoryNav" aria-label="Main navigation">
+    <a href="#products" data-nav-category="All">All products</a>
+    <a href="#products" data-nav-category="Electronics">Electronics</a>
+    <a href="#products" data-nav-category="Fashion">Fashion</a>
+    <a href="#products" data-nav-category="Home">Home & living</a>
+    <a href="#products" data-nav-category="Beauty">Beauty</a>
+    <a href="#products" data-nav-category="Sports">Sports</a>
+    <a href="#deals" class="deal-link">Today's deals ↗</a>
+  </nav>
+
+  <main id="home">
+    <section class="hero page-shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> THE EVERYDAY EDIT</p>
+        <h1>Good finds.<br><em>Great feeling.</em></h1>
+        <p class="hero-description">Thoughtful picks for your life, your space and everything in between. Discover more of what you love.</p>
+        <div class="hero-actions">
+          <a href="#products" class="button button-primary">Explore collection <span>↗</span></a>
+          <a href="#deals" class="text-link">See today's deals <span>→</span></a>
+        </div>
+        <div class="hero-proof"><div class="avatar-stack"><span>R</span><span>A</span><span>M</span><span>+</span></div><p><strong>10,000+</strong><br>happy shoppers</p><span class="proof-divider"></span><p class="rating"><strong>★★★★★</strong><br>4.8/5 average rating</p></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-note note-top"><span>✦</span><div><strong>Curated for you</strong><small>Little things, big joy</small></div></div>
+        <div class="hero-product hero-product-main"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85" alt="Premium wireless headphones"></div>
+        <div class="hero-product hero-product-small"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=85" alt="Minimal wristwatch"></div>
+        <div class="hero-note note-bottom"><span>↗</span><div><strong>Up to 40% off</strong><small>On selected essentials</small></div></div>
+        <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span>
+      </div>
+    </section>
+
+    <section class="trust-strip page-shell" aria-label="Store benefits">
+      <div><span class="trust-icon">↗</span><p><strong>Free shipping</strong><small>On orders above ₹2,499</small></p></div>
+      <div><span class="trust-icon">◇</span><p><strong>Secure checkout</strong><small>Your details stay private</small></p></div>
+      <div><span class="trust-icon">↺</span><p><strong>Easy returns</strong><small>7-day return window</small></p></div>
+      <div><span class="trust-icon">♡</span><p><strong>Made for you</strong><small>Handpicked everyday goods</small></p></div>
+    </section>
+
+    <section class="category-section page-shell">
+      <div class="section-heading"><div><p class="eyebrow">FIND YOUR THING</p><h2>Shop by category</h2></div><a href="#products" class="text-link" id="allCategoriesLink">View all products →</a></div>
+      <div class="category-cards">
+        <button class="category-card cat-electronics" data-category="Electronics"><span class="category-symbol">⌁</span><span><strong>Electronics</strong><small>Gadgets & tech</small></span><b>↗</b></button>
+        <button class="category-card cat-fashion" data-category="Fashion"><span class="category-symbol">✳</span><span><strong>Fashion</strong><small>Wear your mood</small></span><b>↗</b></button>
+        <button class="category-card cat-home" data-category="Home"><span class="category-symbol">⌂</span><span><strong>Home & living</strong><small>Make space yours</small></span><b>↗</b></button>
+        <button class="category-card cat-beauty" data-category="Beauty"><span class="category-symbol">✦</span><span><strong>Beauty</strong><small>Your daily ritual</small></span><b>↗</b></button>
+        <button class="category-card cat-sports" data-category="Sports"><span class="category-symbol">↗</span><span><strong>Sports</strong><small>Move with purpose</small></span><b>↗</b></button>
+      </div>
+    </section>
+
+    <section class="products-section page-shell" id="products">
+      <div class="section-heading product-heading"><div><p class="eyebrow">THE GOOD STUFF</p><h2 id="productSectionTitle">Popular right now<span class="heading-period">.</span></h2><p class="section-subtitle" id="resultsSummary">A few things we think you'll love.</p></div><button class="text-link" id="clearFiltersButton">Clear filters ↺</button></div>
+      <div class="filter-toolbar">
+        <div class="filter-categories" id="filterCategories" aria-label="Filter by category">
+          <button class="filter-chip active" data-category="All">All items</button>
+          <button class="filter-chip" data-category="Electronics">Electronics</button>
+          <button class="filter-chip" data-category="Fashion">Fashion</button>
+          <button class="filter-chip" data-category="Home">Home & living</button>
+          <button class="filter-chip" data-category="Beauty">Beauty</button>
+          <button class="filter-chip" data-category="Sports">Sports</button>
+        </div>
+        <div class="filter-controls">
+          <label class="price-filter">Max price <span id="priceValue">₹10,000</span><input id="priceRange" type="range" min="100" max="10000" step="100" value="10000"></label>
+          <select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="price-low">Price: Low to high</option><option value="price-high">Price: High to low</option><option value="rating">Top rated</option><option value="newest">Newest first</option></select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyProducts"><span>⌕</span><h3>No products found</h3><p>Try a different search or clear your filters.</p><button class="button button-secondary" id="resetSearchButton">Reset filters</button></div>
+    </section>
+
+    <section class="deal-banner page-shell" id="deals">
+      <div class="deal-text"><p class="eyebrow">A LITTLE SOMETHING EXTRA</p><h2>Small upgrades.<br><em>Big everyday joy.</em></h2><p>Fresh picks, limited-time prices and the little things that make a difference.</p><button class="button button-light" id="shopDealsButton">Shop deals <span>↗</span></button></div>
+      <div class="deal-art"><div class="deal-disc"></div><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85" alt="Red sports sneaker"><span class="deal-sticker">DEAL<br>DROP</span></div>
+    </section>
+
+    <section class="newsletter page-shell"><div><p class="eyebrow">GOOD THINGS IN YOUR INBOX</p><h2>A little joy, delivered.</h2><p>Get product updates and occasional offers. No spam, ever.</p></div><form id="newsletterForm" class="newsletter-form"><label class="sr-only" for="newsletterEmail">Email address</label><input type="email" id="newsletterEmail" placeholder="Your email address" required><button type="submit" class="button button-primary">Sign me up ↗</button></form></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-main page-shell"><div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark">S</span><span>shop<span class="brand-accent">ease</span><small>EVERYDAY, MADE BETTER</small></span></a><p>Everyday essentials, thoughtfully picked. Shop what you love and make the little things count.</p></div><div><h3>Explore</h3><a href="#products">All products</a><a href="#products" data-footer-category="Electronics">Electronics</a><a href="#products" data-footer-category="Fashion">Fashion</a><a href="#deals">Today's deals</a></div><div><h3>Help & support</h3><a href="#footerInfo" data-info="shipping">Shipping information</a><a href="#footerInfo" data-info="returns">Returns & refunds</a><a href="#footerInfo" data-info="privacy">Privacy policy</a><a href="#footerInfo" data-info="contact">Contact us</a></div><div class="footer-contact"><h3>Stay in the loop</h3><p>Follow the good stuff.</p><div class="social-links"><a href="#home" aria-label="Instagram">ig</a><a href="#home" aria-label="Pinterest">p</a><a href="#home" aria-label="YouTube">▶</a></div><p class="footer-demo-note">Student demo project · No real payments</p></div></div><div class="footer-bottom page-shell"><span>© <span id="currentYear"></span> ShopEase. Built for learning.</span><span>Made with HTML · CSS · JavaScript</span></div></footer>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">YOUR PICKS</p><h2 id="cartTitle">Shopping bag <span id="drawerCartCount">(0)</span></h2></div><button class="close-button" id="closeCartButton" aria-label="Close cart">×</button></div>
+    <div class="shipping-progress"><p id="shippingMessage">You're a little way from free shipping.</p><div class="progress-track"><span id="shippingProgress"></span></div></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty hidden" id="cartEmpty"><span>▣</span><h3>Your bag is taking a break</h3><p>Add something you love and it'll show up here.</p><button class="button button-primary" id="continueShoppingButton">Keep exploring</button></div>
+    <div class="cart-summary" id="cartSummary"><div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><div><span>Shipping</span><strong id="cartShipping">₹0</strong></div><div class="summary-total"><span>Total</span><strong id="cartTotal">₹0</strong></div><p>Taxes are included where applicable.</p><button class="button button-primary checkout-button" id="checkoutButton">Continue to checkout <span>→</span></button><button class="text-link continue-link" id="continueShoppingText">Continue shopping</button></div>
+  </aside>
+
+  <section class="modal hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal-header"><div><p class="eyebrow">ALMOST YOURS</p><h2 id="checkoutTitle">Checkout</h2></div><button class="close-button" data-close-modal aria-label="Close checkout">×</button></div>
+    <div class="checkout-layout"><form id="checkoutForm" class="checkout-form" novalidate>
+      <h3>Contact information</h3>
+      <div class="form-grid"><label>Full name<input name="name" id="customerName" required minlength="2" autocomplete="name" placeholder="Your full name"><small class="field-error"></small></label><label>Email address<input name="email" id="customerEmail" type="email" required autocomplete="email" placeholder="you@example.com"><small class="field-error"></small></label><label>Phone number<input name="phone" id="customerPhone" type="tel" required pattern="[0-9 +()-]{8,16}" autocomplete="tel" placeholder="+91 98765 43210"><small class="field-error"></small></label><label>PIN code<input name="pincode" id="customerPincode" required pattern="[0-9]{6}" inputmode="numeric" placeholder="6-digit PIN code"><small class="field-error"></small></label><label class="full-field">Delivery address<textarea name="address" id="customerAddress" required minlength="8" autocomplete="street-address" rows="2" placeholder="House number, street, area"></textarea><small class="field-error"></small></label><label>City<input name="city" id="customerCity" required minlength="2" autocomplete="address-level2" placeholder="City"><small class="field-error"></small></label><label>Payment method<select name="payment" id="paymentMethod"><option value="Cash on Delivery">Cash on Delivery (demo)</option><option value="Demo UPI">UPI (demo only)</option><option value="Demo Card">Card (demo only)</option></select><small class="field-hint">No real payment is collected.</small></label></div>
+      <label class="checkbox-label"><input type="checkbox" id="termsCheck" required> I confirm these details are correct.</label><p class="form-error" id="checkoutError" role="alert"></p><button class="button button-primary place-order-button" type="submit">Place demo order <span>→</span></button>
+    </form><aside class="checkout-summary"><h3>Order summary</h3><div id="checkoutItems"></div><div class="checkout-totals"><p><span>Subtotal</span><strong id="checkoutSubtotal">₹0</strong></p><p><span>Shipping</span><strong id="checkoutShipping">₹0</strong></p><p class="checkout-grand-total"><span>Total</span><strong id="checkoutTotal">₹0</strong></p></div></aside></div>
+  </section>
+
+  <section class="modal product-modal hidden" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle"><button class="close-button product-modal-close" data-close-modal aria-label="Close product details">×</button><div id="productModalContent"></div></section>
+  <section class="modal account-modal hidden" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle"><div class="modal-header"><div><p class="eyebrow">YOUR SHOPPING SPACE</p><h2 id="accountModalTitle">Your account</h2></div><button class="close-button" data-close-modal aria-label="Close account">×</button></div><div id="accountContent"></div></section>
+  <section class="modal admin-modal hidden" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><div class="modal-header"><div><p class="eyebrow">DEMO CONTROL PANEL</p><h2 id="adminTitle">Store manager</h2></div><button class="close-button" data-close-modal aria-label="Close manager">×</button></div><div class="admin-toolbar"><p>Manage products stored in this browser. This is a local demo, not a secure admin system.</p><div class="admin-actions"><button class="button button-secondary" id="exportJsonButton">Export JSON</button><button class="button button-secondary" id="exportCsvButton">Export CSV</button><button class="button button-secondary" id="importProductsButton">Import JSON</button><input type="file" id="importFileInput" accept=".json,application/json" hidden><button class="button button-primary" id="addProductButton">+ Add product</button></div></div><div class="admin-stats" id="adminStats"></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead><tbody id="adminProductRows"></tbody></table></div><form id="productEditor" class="product-editor hidden" novalidate><h3 id="productEditorTitle">Add product</h3><input type="hidden" id="editProductId"><div class="form-grid"><label>Product name<input id="editProductName" required minlength="2"></label><label>Category<select id="editProductCategory"><option>Electronics</option><option>Fashion</option><option>Home</option><option>Beauty</option><option>Sports</option></select></label><label>Price (₹)<input id="editProductPrice" type="number" min="1" required></label><label>Original price (₹)<input id="editProductOriginalPrice" type="number" min="1"></label><label>Stock<input id="editProductStock" type="number" min="0" required></label><label>Rating (0–5)<input id="editProductRating" type="number" min="0" max="5" step=".1" value="4.5"></label><label class="full-field">Image URL<input id="editProductImage" type="url" required placeholder="https://..."></label><label class="full-field">Description<textarea id="editProductDescription" rows="2" required minlength="10"></textarea></label></div><p class="form-error" id="productEditorError"></p><div class="admin-actions"><button class="button button-primary" type="submit">Save product</button><button class="button button-secondary" type="button" id="cancelProductEdit">Cancel</button></div></form></section>
+  <section class="modal info-modal hidden" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle"><div class="modal-header"><h2 id="infoTitle">Information</h2><button class="close-button" data-close-modal aria-label="Close information">×</button></div><div id="infoContent"></div></section>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <button class="admin-shortcut" id="adminShortcut" title="Open demo store manager" aria-label="Open store manager">⚙</button>
+</body>
+</html>
